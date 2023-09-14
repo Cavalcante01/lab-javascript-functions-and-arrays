@@ -1,41 +1,120 @@
 // Iteration #1: Find the maximum
-function maxOfTwoNumbers() {}
+
+function maxOfTwoNumbers(number0, number1) {
+  if (number0 > number1) {
+    return number0;
+  } else {
+    return number1;
+  }
+}
 
 
-
-// Iteration #2: Find longest word
-const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
-
-function findLongestWord() {}
+console.log(maxOfTwoNumbers(20, 10));
 
 
+// // Iteration #2: Find longest word
+const word = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-// Iteration #3: Calculate the sum
-const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
+function findLongestWord(arrayOfWords) {
+  if(arrayOfWords.length === 0){
+    return null;
+  }
+  let maisLonga = "";
+  arrayOfWords.forEach(function(checarPalavras){
+    if(checarPalavras.length > maisLonga.length){
+      maisLonga = checarPalavras;
+    }
+  });
+  return  maisLonga;
+}
+console.log(findLongestWord(words));
 
-function sumNumbers() {}
+
+function sumNumbers(arrayNumbers) {
+  if(arrayNumbers.length === 0) {
+    return 0;
+  }
+      let soma = 0;
+      for (let i = 0; i < arrayNumbers.length; i ++){
+      soma += arrayNumbers[i];
+      }
+      return soma
+    }
+      console.log(sumNumbers(numbers));
 
 
 
 // Iteration #3.1 Bonus:
-function sum() {}
+
+
+  
 
 
 
-// Iteration #4: Calculate the average
+// // Iteration #4: Calculate the average
 // Level 1: Array of numbers
-const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
+function averageNumbers(numeros) {
+  if (numeros.length === 0) {
+    return null;
+  }
+
+  let soma = 0;
+  for (let i = 0; i < numeros.length; i++) {
+    soma += numeros[i];
+  }
+
+let media = soma / numeros.length;
+  return media;
+}
+
+let numeros = [1, 2, 3, 4, 5];
+console.log(averageNumbers(numeros));
 
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() { }
+
+
+function averageWordLength(words) {
+  let totalLength = 0;
+
+  for (let i = 0; i < words.length; i++) {
+    totalLength += words[i].length;
+  }
+
+  if (words.length === 0) {
+    return null;
+  }
+
+  return totalLength / words.length;
+}
+
+
+let avgLength = averageWordLength(words);
+console.log(`Comprimento médio das palavras: ${avgLength}`);
 
 // Bonus - Iteration #4.1
-function avg() {}
+function avg(students) {
+  if (students.length === 0) {
+    return null; 
+  }
+
+  let studentsAmount = 0;
+
+  students.forEach(function (student) {
+    if (typeof student === "string") {
+      studentsAmount += student.length; 
+    } else if (typeof student === "number") {
+      studentsAmount += student;
+    }
+  });
+
+  return studentsAmount / students.length; 
+}
+
+
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
@@ -52,19 +131,50 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
-
-
+function uniquifyArray(wordArray) {
+    if (wordArray.length === 0) {
+      return null;
+    }
+let uniqueArray = [];
+  for (let i = 0; i < wordArray.length; i++) {
+   let word = wordArray[i];
+    if (uniqueArray.indexOf(word) === -1) {
+      uniqueArray.push(word);
+    }
+  }
+  return uniqueArray;
+}
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+function doesWordExist(words, wordsToFind) {
+  if(words.length === 0) {
+    return null;
+  }
+  for (let i = 0; i < words.length; i++) {
+    if (words[i] === wordsToFind) {
+      return true;
+    }
+  }
+  return false; 
+}
+
 
 
 
 // Iteration #7: Count repetition
-const wordsCount = [
+function howManyTimes(wordArray, wordToFind) {
+  let count = 0;
+  for (let word of wordArray) {
+      if (word === wordToFind) {
+          count++;
+      }
+  }
+  return count;
+}
+
+const words = [
   'machine',
   'matter',
   'subset',
@@ -78,7 +188,10 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+let palavra = 'matter';
+let result = howManyTimes(words, palavra);
+
+console.log(`A palavra "${palavra}" aparece ${result} vezes na matriz.`);
 
 
 
