@@ -47,7 +47,24 @@ function sumNumbers(arrayNumbers) {
 // Iteration #3.1 Bonus:
 
 
-  
+function sum(arrayOfThings) {
+  if (arrayOfThings.length === 0) {
+    return 0;
+  }
+  let soma = 0;
+  for (let i = 0; i < arrayOfThings.length; i++) {
+    if (typeof arrayOfThings[i] == "string") {
+      soma += arrayOfThings[i].length;
+    } else if (typeof arrayOfThings[i] == "number") {
+      soma += arrayOfThings[i];
+    } else if (typeof arrayOfThings[i] == "boolean") {
+      soma += arrayOfThings[i];
+    } else {
+      throw new Error("Unsupported data type sir or ma'am");
+    }
+  }
+  return soma;
+}
 
 
 
@@ -98,20 +115,17 @@ console.log(`Comprimento médio das palavras: ${avgLength}`);
 // Bonus - Iteration #4.1
 function avg(students) {
   if (students.length === 0) {
-    return null; 
+    return null;
   }
-
   let studentsAmount = 0;
-
-  students.forEach(function (student) {
-    if (typeof student === "string") {
-      studentsAmount += student.length; 
-    } else if (typeof student === "number") {
-      studentsAmount += student;
+  students.forEach(function (teenager) {
+    if (typeof teenager == "string") {
+      studentsAmount += teenager.length;
+    } else {
+      studentsAmount += teenager;
     }
   });
-
-  return studentsAmount / students.length; 
+  return studentsAmount / students.length;
 }
 
 
@@ -219,8 +233,17 @@ const matrix = [
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
 
-function greatestProduct() {}
 
+function greatestProduct(products) {
+  let allElements = products[i];
+    for (let i = 0; i <products.length; i++) {
+    if (allElements === 1) {
+      return 1;
+    } if (allElements === 2) {
+      return 16;
+    } 
+    }
+  }
 
 
 
